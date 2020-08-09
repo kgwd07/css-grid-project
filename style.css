@@ -4,7 +4,7 @@
 ========================
  */
 :root {
-  --primaryColor: #f15025;
+  --primaryColor: #b80c09;
   --mainBlack: #222;
   --mainWhilte: #fff;
   --offWhite: #f7f7f7;
@@ -71,6 +71,7 @@ p {
   background: var(--primaryColor);
   color: var(--mainWhilte);
 }
+
 /*
  =====================
 !main-navbar
