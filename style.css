@@ -125,7 +125,7 @@ p {
   color: var(--mainWhilte);
   display: grid;
   justify-content: center;
-  align-content: center;
+  align-items: center;
   /* align-items: center; */
 }
 .hero-banner {
@@ -134,10 +134,11 @@ p {
   /* text-align: center; */
 }
 .hero-header p {
+  font-family: "Dancing Script", cursive;
   width: 80%;
   margin: 0 auto;
   max-width: 560px;
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 @media screen and (max-width: 600px) {
@@ -147,7 +148,7 @@ p {
 }
 @media screen and (min-width: 768px) {
   .hero-header {
-    background: linear-gradient(rgba(241, 80, 37, 0.75), rgba(0, 0, 0, 0.75)),
+    background: linear-gradient(rgba(184, 12, 9, 0.75), rgba(0, 0, 0, 0.6)),
       url(./images/image-2.jpeg) center/cover fixed no-repeat;
   }
 }
@@ -177,6 +178,10 @@ p {
   /* border: 1px solid red; */
   padding: 1rem;
 }
+.card-info p {
+  font-family: "Dancing Script", cursive;
+  font-size: 1.5rem;
+}
 .card-footer {
   background: var(--darkGrey);
   padding: 0.5rem 1rem;
@@ -186,7 +191,7 @@ p {
   color: var(--primaryColor);
 }
 
-/* todo therr are to methods to set the column layout using media screen and using gid */
+/* todo there are two methods to set the column layout, using media screen and using gid */
 
 /* !first using media screen */
 /* @media screen and (min-width: 768px) {
@@ -202,24 +207,32 @@ p {
   }
 } */
 
-/* !colums using minmax,auto-fill,auto-fit */
-/*  ? 1gap = 32px, 2 gap = 64px, 3gap = 96px --- 1gap = 2rem  */
+/* !colums using minmax,auto-fill or auto-fit */
+/*  ? 1 gap 2rem = 32px, 2 gap = 64px, 3gap = 96px ---*/
 
 /* todo to find the width of one column */
 
-/*  ! width of the column --- (1170 - 64)/3 = 368.66*/
+/*  ! width of the column (for three column) ---> (1170 - 64)/3 = 368.66 -----*/
+/*  ! width of the column (for four column) ---> (1170 - 96)/4 = 268.5 -----*/
 
 .cards-center {
   display: grid;
   grid-column-gap: 2rem;
   /* for three column layout */
-  grid-template-columns: repeat(auto-fill, minmax(368px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(368.66px, 1fr));
   /* similarly, for 4 ccolumn layout  */
   /* grid-template-columns: repeat(auto-fill, minmax(268.5px, 1fr)); */
 }
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+}
+
 /*
 =====================
-!titles
+!tiles
 ========================
 */
 .tiles {
@@ -288,6 +301,7 @@ p {
 
   .tiles img {
     height: 100%;
+    -o-object-fit: cover;
     object-fit: cover;
   }
 }
@@ -296,7 +310,7 @@ p {
 !layout
 ========================
 */
-header {
+.header {
   background: var(--primaryColor);
   color: var(--mainWhilte);
   text-align: center;
@@ -397,6 +411,8 @@ header {
     min-height: 100%;
     background: var(--darkGrey);
     color: var(--primaryColor);
+  }
+  .sidebar span {
     transition: var(--mainTransition);
   }
   .sidebar span:hover {
